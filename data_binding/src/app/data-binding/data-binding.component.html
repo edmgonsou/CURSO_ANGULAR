@@ -1,19 +1,20 @@
 <section class="property-binding">
 
-    <!-- <article>
+    <article>
         <h3>interpolation / Interpolação</h3>
         <p>Resultado de 1 + 1 é: {{1 + 1}} </p>
         <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }} </p>
         <p>String renderizada com Interpolção: {{ url }} </p>
         <p>Curso Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
     </article>
-
+    <br><br>
     <article>
         <h3>Property Binding</h3>
         <img src="{{ urlImagem }}">
         <img [src]="urlImagem">
         <img bind-src="urlImagem">
-    </article> -->
+    </article>
+    <br><br>
 
     <article>
         <h3>Class e Style Binding</h3>
@@ -36,8 +37,8 @@
             </div>
 
             <div class="alert alert-danger" role="alert"
-            [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' ">
-            Esse texto somente aparece em caso de danger
+                [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' ">
+                Esse texto somente aparece em caso de danger
             </div>
 
             <div class="alert" role="alert" [class.alert-primary]="classe.value == 'alert-primary'">primary alert</div>
@@ -50,6 +51,31 @@
             <div class="alert" role="alert" [class.alert-light]="classe.value == 'alert-light'">light aler</div>
             <div class="alert" role="alert" [class.alert-dark]="classe.value == 'alert-dark'">dark alert</div>
 
+        </div>
+    </article>
+    <br><br>
+    <article>
+        <h3>Event Binding</h3>
+        <div>
+            <button (click)="botaoClicado()" class="btn btn-primary">Me clique!</button>
+            
+            <br><br>
+
+            <input type="text"
+            (keyup)="onKeyUp($event)"
+            (keyup.enter)="salvarValor(campoInput.value)"
+            (blur)="salvarValor(campoInput.value)"
+            #campoInput>           
+            
+            <p>Valor Atual: {{ valorAtual }} </p>
+            <p>Valor Salvo: {{ valorSalvo }} </p>
+
+            <br>
+            <span
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver">
+            Passe o mouse sobre mim</span>
         </div>
     </article>
 
