@@ -1,0 +1,56 @@
+<section class="property-binding">
+
+    <!-- <article>
+        <h3>interpolation / Interpolação</h3>
+        <p>Resultado de 1 + 1 é: {{1 + 1}} </p>
+        <p>Resultado de 1 + 1 não é {{ 1 + 1 + getValor() }} </p>
+        <p>String renderizada com Interpolção: {{ url }} </p>
+        <p>Curso Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+    </article>
+
+    <article>
+        <h3>Property Binding</h3>
+        <img src="{{ urlImagem }}">
+        <img [src]="urlImagem">
+        <img bind-src="urlImagem">
+    </article> -->
+
+    <article>
+        <h3>Class e Style Binding</h3>
+        <div>
+            Selecione uma classe
+            <select #classe (change)="0">
+                <option value="alert-primary">Primary</option>
+                <option value="alert-secondary">Secondary</option>
+                <option value="alert-success">Success</option>
+                <option value="alert-danger">Danger</option>
+                <option value="alert-warning">Warning</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-light">Light</option>
+                <option value="alert-dark">Dark</option>
+            </select>
+            <br><br>
+
+            <div class="alert {{ classe.value }} " role="alert">
+                TEXTO COLORIDO CONFORME VALOR DO COMBOBOX.
+            </div>
+
+            <div class="alert alert-danger" role="alert"
+            [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' ">
+            Esse texto somente aparece em caso de danger
+            </div>
+
+            <div class="alert" role="alert" [class.alert-primary]="classe.value == 'alert-primary'">primary alert</div>
+            <div class="alert" role="alert" [class.alert-secondary]="classe.value == 'alert-secondary'">secondary alert
+            </div>
+            <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">success alert</div>
+            <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">danger alert</div>
+            <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">warning alert</div>
+            <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">info alert</div>
+            <div class="alert" role="alert" [class.alert-light]="classe.value == 'alert-light'">light aler</div>
+            <div class="alert" role="alert" [class.alert-dark]="classe.value == 'alert-dark'">dark alert</div>
+
+        </div>
+    </article>
+
+</section>
