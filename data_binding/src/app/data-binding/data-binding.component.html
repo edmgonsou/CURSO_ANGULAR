@@ -85,17 +85,13 @@
     <article>
         <h3>Two-way data binding</h3>
         <div>
-            <input type="text"
-             [value]="nome" 
-             (input)="nome = nomeImput.value" #nomeImput/>
+            <input type="text" [value]="nome" (input)="nome = nomeImput.value" #nomeImput />
 
-             <input type="text"
-             [ngModel]="nome" 
-             (ngModelChange)="nome = $event"/>
-            
-             <input type="text"[(ngModel)]="nome"/>
-             <input type="text" bindon-ngModel="nome"/>
-            
+            <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+
+            <input type="text" [(ngModel)]="nome" />
+            <input type="text" bindon-ngModel="nome" />
+
             <p>Você digitou: {{ nome }}</p>
         </div>
 
@@ -109,3 +105,18 @@
         </div>
     </article>
 </section>
+<br><br>
+
+<section class="input-output-properties">
+
+    <article>
+        <h3>Input/output Properties</h3>
+
+        <app-curso [nome]="nomeDoCurso" ></app-curso>
+
+        <contador [valor]="valorInicial"
+        (mudouValor)="onMudouValor($event)"
+        ></contador>
+
+    </article>
+</section> 

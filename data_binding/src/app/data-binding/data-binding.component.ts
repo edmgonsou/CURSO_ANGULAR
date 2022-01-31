@@ -22,6 +22,10 @@ export class DataBindingComponent implements OnInit {
     idade: 21
   }
 
+  nomeDoCurso: string = 'Angular';
+
+  valorInicial = 15;  
+
   getValor(): number {
     return 1;
   };
@@ -47,6 +51,10 @@ export class DataBindingComponent implements OnInit {
 
   descInput(evento: string){
     this.descricao = evento;
+  }
+
+  onMudouValor(evento: { novoValor: number; }){
+    console.log(evento.novoValor);
   }
 
   constructor() { }
